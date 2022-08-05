@@ -1,0 +1,232 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+body {
+	font-family: 'Poppins', sans-serif !important;
+}
+.main-menu .navbar-header .navbar-brand .brand-logo img {
+	max-width: 220px;
+}
+.support {
+	text-align: center;
+	margin-right: 15px;
+}
+
+.support p {
+	margin: 0 !important;
+	font-size: 14px;
+	color: #484848;
+}
+.profile p {
+	margin: 0;
+	font-size: 14px;
+	margin-top: 5px;
+	color: #484848;
+	}
+
+html .content.app-content {
+	padding: calc(5rem + 4.45rem + 1.3rem) 2rem 0;
+}
+.main-menu .main-menu-content {
+	padding-top: 5rem;
+}
+.vertical-layout.vertical-menu-modern.menu-expanded .main-menu {
+	background: linear-gradient(142.42deg, rgba(254, 248, 255, 0.21) 1.79%, rgba(254, 248, 255, 0) 100.42%);
+}
+.main-menu.menu-light .navigation>li a{
+	display: block !important;
+}
+.main-menu.menu-light .navigation>li.active>a {
+	color: #fff !important;
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	text-align: center;
+	padding: 12px 24px;
+	text-transform: uppercase;
+	border-radius: 17.4px !important;
+	background: radial-gradient(82.86% 82.86% at 28.57% 17.14%, #E9A013 0%, #DF5114 100%);
+	box-shadow: 0.869949px 6.95959px 9.56944px -0.869949px rgb(223 81 21 / 47%);
+}
+.main-menu.menu-light .navigation>li a{
+	opacity: 0.8;
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	text-align: center;
+	padding: 12px 24px;
+	text-transform: uppercase;
+	color: #fff !important;
+	background: radial-gradient(82.86% 82.86% at 28.57% 17.14%, #AEDAEE 0%, #25425F 100%);
+	box-shadow: 0.869949px 6.95959px 9.56944px -0.869949px #385773;
+	border-radius: 17.4px !important;
+}
+.main-menu.menu-light .navigation>li{
+	margin-bottom: 18px;
+}
+.main-menu.menu-light .navigation {
+	background: transparent;
+}
+.navbar-light {
+	font-family: 'Poppins', sans-serif !important;
+	background: linear-gradient(142.53deg, rgba(254, 248, 255, 0.21) 2.01%, rgba(254, 248, 255, 0) 100.42%);
+}
+section.home .card {
+	border: none;
+	height: 180px;
+	border-radius: 21.9587px;
+	background-color: #3763AE;
+	background-image: linear-gradient(142.42deg, rgba(254, 248, 255, 0.21) 1.79%, rgba(254, 248, 255, 0) 100.42%);
+	box-shadow: inset -5.48968px -5.48968px 16.469px rgb(0 0 0 / 46%), inset 5.48968px 5.48968px 13.1752px rgb(255 255 255 / 40%);
+}
+.icon-txt {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	right: 0;
+	padding: 0px 15px;
+	margin-bottom: 15px;
+}
+
+.icons-dashboard img {
+	width: 70px;
+}
+.txt-dashboard h2 {
+	margin-bottom: 0;
+	font-size: 46px;
+	color: #fff;
+	font-weight: 700;
+}
+
+.txt-dashboard {
+	padding: 0px 8px;
+}
+section.home .card h3 {
+	font-size: 20px;
+	line-height: 30px !important;
+	color: #fff;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif;
+}
+
+// login css
+.login-wrapper {
+	background: url(../images/pages/bg-login.png);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 100vh;
+	padding: 150px 0px 0px 0px;
+}
+.login-wrapper .card {
+	width: 80%;
+	margin: 0 auto;
+	border-radius: 50px;
+	background: linear-gradient(111.36deg, #25425F 6.41%, #88CBEA 105.25%);
+}
+
+.login-wrapper .card .card-body{
+	padding: 0;
+}
+.login-img img {
+	width: 100%;
+}
+
+.login-img {
+	padding: 50px;
+	background: linear-gradient(111.36deg, #25425F 6.41%, #88CBEA 105.25%);
+	z-index: 999999;
+	position: relative;
+	border-radius: 50px 0px 0px 50px;
+}
+
+.login-wrapper .card .col-md-7,
+.login-wrapper .card .col-md-5 {
+	padding: 0;
+}
+.login-form {
+	background: #fff;
+	padding: 1.5rem;
+	height: 100%;
+	border-radius: 0px 50px 50px 0px;
+	border-left: 10px solid rgb(0 0 0 / 10%);
+}
+.welcome-sec {
+	width: 250px;
+	height: 45px;
+	border-radius: 0px 20px 20px 0px;
+	text-align: center;
+	line-height: 45px;
+	color: #fff;
+	font-size: 16px;
+	margin-left: -45px;
+	background: linear-gradient(111.36deg, #25425F 6.41%, #88CBEA 105.25%);
+}
+.login-logo {
+	text-align: center;
+	padding: 30px 0px;
+}
+.login-form h5 {
+	text-align: center;
+	margin-bottom: 50px;
+	color: #25425F;
+}
+.login-form form {
+	padding: 0px 60px;
+	text-align: center;
+}
+.login-form form input {
+	border: none;
+	border-bottom: 2.3px solid #25425F;
+	border-radius: 0;
+	color: #25425F;
+}
+.login-form form input:focus {
+	box-shadow: none !important;
+}
+button.btn-login {
+	background: linear-gradient(111.36deg, #25425F 6.41%, #88CBEA 105.25%);
+	border: none;
+	border-radius: 30px;
+	width: 150px;
+	height: 45px;
+	display: block;
+	margin: 35px auto 20px auto;
+}
+a.btn.btn-forgot-pass {
+	padding: 5px 10px;
+	border-bottom: 2.3px solid #25425F;
+	border-radius: 0;
+}
+.login-form form input::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: #25425F;
+	opacity: 1;
+	/* Firefox */
+}
+
+.login-form form input:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #25425F;
+}
+
+.login-form form input::-ms-input-placeholder {
+	/* Microsoft Edge */
+	color: #25425F;
+}
+.invalid-feedback {
+	text-align: left;
+}

@@ -1,0 +1,131 @@
+<div class="content-wrapper container-fluid p-0">
+    <div class="content-body">
+        <!-- content-header component -->
+        <ng-container *ngIf="contentHeader">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12 d-flex">
+                            <h2 class="content-header-title float-left mb-0">
+                                {{ contentHeader.headerTitle }}
+                            </h2>
+                            <!-- app-breadcrumb component -->
+                            <app-breadcrumb [breadcrumb]="contentHeader.breadcrumb"></app-breadcrumb>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </ng-container>
+
+        <!-- Basic Alerts start -->
+        <section id="home-page">
+            <div class="card user-list-page ">
+                <div class="card-body">
+                    <section id="ngx-datatable-kitchen-sink">
+                        <div class="card">
+                            <h4 class="card-title">User List</h4>
+                            <div class="row">
+                                <div class="col-12 mb-50">
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="d-flex justify-content-between align-items-center m-1">
+                                        <label class="d-flex align-items-center">Show
+                                            <select class="form-control mx-25" [(ngModel)]="basicSelectedOption">
+                                                <option value="10">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select>
+                                            entries</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12 d-flex justify-content-md-end">
+                                    <div
+                                        class="d-flex align-items-center justify-content-end pr-1 pb-1 pl-1 pl-md-0 pb-md-0">
+                                        <div class="input-group mb-1 search-table">
+                                            <input type="search" placeholder="Search" class="form-control ml-25"
+                                                (keyup)="filterUpdate($event)" (search)="filterUpdate($event)" />
+                                        </div>
+                                        <button csvLink (click)="downloadCSV($event)"
+                                            class="btn btn-outline-secondary float-right mr-1 csv-export"
+                                            rippleEffect><img src="assets/images/excel-icon.png" alt=""> </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <ngx-datatable class="material container striped" [columns]="cols" [rows]="kitchenSinkRows"
+                                [rowHeight]="58" rowHeight="auto" class="bootstrap core-bootstrap" [limit]="5"
+                                [columnMode]="ColumnMode.force" [headerHeight]="40" [footerHeight]="50"
+                                [scrollbarH]="true" [selectionType]="SelectionType.checkbox"
+                                [limit]="basicSelectedOption" (activate)="onActivate($event)"
+                                (select)="onSelect($event)">
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false"
+                                    [draggable]="false" [resizeable]="false">
+                                    <ng-template ngx-datatable-header-template let-value="value"
+                                        let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input"
+                                                [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)"
+                                                id="headerChkbxRef" />
+                                            <label class="custom-control-label" for="headerChkbxRef"></label>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value"
+                                        let-isSelected="isSelected" let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" [checked]="isSelected"
+                                                (change)="onCheckboxChangeFn($event)" id="rowChkbxRef{{ rowIndex }}" />
+                                            <label class="custom-control-label" for="rowChkbxRef{{ rowIndex }}"></label>
+                                        </div>
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                <ngx-datatable-column name="ID" [width]="50" [sortable]="false">
+                                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+                                        {{rowIndex+1}}
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                <ngx-datatable-column name="Profile Images" prop="profile_image" [width]="150">
+                                    <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                                        <div class="image-profile-user">
+                                            <img src="{{row.profile_image}}">
+                                        </div>
+                                    </ng-template>
+
+                                </ngx-datatable-column>
+                                <ngx-datatable-column name="Full Name" prop="fullName" [width]="250">
+                                </ngx-datatable-column>
+                                <ngx-datatable-column name="Email" prop="email" [width]="350"></ngx-datatable-column>
+                                <ngx-datatable-column name="Phone" prop="phone" [width]="250"></ngx-datatable-column>
+                                <ngx-datatable-column name="Gender" prop="gender" [width]="150">
+                                </ngx-datatable-column>
+                                <ngx-datatable-column name="Date Of Birth" prop="dob" [width]="200">
+                                </ngx-datatable-column>
+                                <ngx-datatable-column name="City" prop="city" [width]="200">
+                                </ngx-datatable-column>
+                                <ngx-datatable-column name="Country" prop="country" [width]="150">
+                                </ngx-datatable-column>
+                                <ngx-datatable-column name="Actions" [width]="350" [sortable]="false">
+                                    <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                                        <div class="d-flex align-items-center btn-block-sec">
+                                            <button (click)="openModel(content,row)"
+                                                class="btn btn-outline-primary">View User
+                                            </button>
+                                            <!-- <button data-bs-toggle="modal" data-bs-target="#b_delete" (click)="blockUsersId(row)" class="btn btn-danger">Block User
+                                            </button> -->
+                                            <button type="button" (click)="modalOpen(modalBasic,modal,row)"
+                                                class="btn btn-outline-primary" rippleEffect>
+                                                Block User
+                                            </button>
+
+                                        </div>
+                                    </ng-template>
+                                </ngx-datatable-column>
+                            </ngx-datatable>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <!-- Basic Alerts end -->
+    </div>
+</div>
